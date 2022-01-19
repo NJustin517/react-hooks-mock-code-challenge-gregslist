@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./Search";
 
-function Header() {
+function Header({ sorted, handleSort, updateSearch }) {
   return (
     <header>
       <h1>
@@ -10,7 +10,9 @@ function Header() {
         </span>
         gregslist
       </h1>
-      <Search />
+      <Search updateSearch={updateSearch} />
+      <p>Sort By Location</p>
+      <input onChange={handleSort} type="checkbox" checked={sorted}></input>
     </header>
   );
 }
